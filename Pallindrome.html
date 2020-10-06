@@ -1,0 +1,19 @@
+ 
+<script> 
+var removePalindromeSub = function(s) {
+    checkPalindrome = (string) => {
+        splitArr = string.split("");
+        revArr = string.split("").reverse();
+        return splitArr.every((val, index) => val === revArr[index]);        
+    }
+    
+    if(s === "") return 0
+    else if(checkPalindrome(s)) return 1
+    else return 2
+    
+    
+};
+
+console.log(removePalindromeSub(""));
+
+</script>

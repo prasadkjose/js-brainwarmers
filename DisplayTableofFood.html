@@ -1,0 +1,62 @@
+ 
+<script>
+
+// Given the array orders, which represents the orders that customers have done in a restaurant. More specifically orders[i]=[customerNamei,tableNumberi,foodItemi] where customerNamei is the name of the customer, tableNumberi is the table customer sit at, and foodItemi is the item customer orders.
+// 
+// Return the restaurant's “display table”. The “display table” is a table whose row entries denote how many of each food item each table ordered. The first column is the table number and the remaining columns correspond to each food item in alphabetical order. The first row should be a header whose first column is “Table”, followed by the names of the food items. Note that the customer names are not part of the table. Additionally, the rows should be sorted in numerically increasing order.
+
+// Input: orders = [["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","Fried Chicken"],["Carla","5","Water"],["Carla","5","Ceviche"],["Rous","3","Ceviche"]]
+// Output: [["Table","Beef Burrito","Ceviche","Fried Chicken","Water"],["3","0","2","1","0"],["5","0","1","0","1"],["10","1","0","0","0"]] 
+
+
+var displayTable = function(orders) {
+    // populate table and Food array.
+    table = [];
+    food = [];
+    orders.forEach((e)=>{
+        table.push(e[1]);
+        food.push(e[2]);
+    })
+    //sort and remove uniques 
+    uTable = table.filter( (e , i, self) => { return self.indexOf(e) === i;} );
+    uFood = food.filter( (e , i, self) => {return self.indexOf(e) === i;} );
+    sTable = uTable.sort(function(a, b){return a-b});
+    sFood = uFood.sort();
+    //console.log(sTable, sFood);
+    
+    //Build Object 
+    obj = {}
+    sFood.forEach((e,i)=>{
+        obj[e] = [];
+    });
+    
+    orders.forEach((order)=>{
+        for(o in obj){
+            if (o === order[2]){
+                obj[o].push(order[1])
+                }       
+        }
+
+    });
+    
+    resultTable=[]
+    resultTable.push(["Table", ...sFood])
+    
+    sTable.forEach((e, i)=>{
+        tRow = [];
+        tRow.push(e)
+        for(o in obj){
+            tRow.push(obj[o].filter(x => x==e).length)
+            
+        }
+        //convert trow to string
+        finalRow = tRow.map((e)=>{
+            return String(e);
+        });
+        resultTable.push(finalRow);
+    });
+    console.log(resultTable);
+};
+
+displayTable([["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","Fried Chicken"],["Carla","5","Water"],["Carla","5","Ceviche"],["Rous","3","Ceviche"]]);
+</script>
