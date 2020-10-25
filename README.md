@@ -1,0 +1,27 @@
+# JavaScript Brain Warmers.
+
+- AsteroidCollision.js
+- ToePlitzMatrix.js
+- findJudge.js
+- majorityElement.js
+- peakIndexInMountainArray.js
+- sumZero.js
+- DisplayTableofFood.html
+- arrangeCoins.js
+- findRestaurant.js
+- maxNumberOfBalloons.js
+- Fibanacci.js
+- binaryGap.js
+- findWords.js
+- maxProfits.js
+- removeDuplicates.js
+- MaxDepthBinaryTree.js
+- buddyStrings.js
+- freqAlphabets.js
+- missingNumber.js
+- removeElement.js
+- Pallindrome.html
+- checkStraigtLine.js
+- intersection.js
+- moveZeros.js
+- shuffleString.js
