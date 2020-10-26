@@ -12,7 +12,7 @@
 | MaxDepthBinaryTree.js   |       buddyStrings.js       |    freqAlphabets.js |
 | missingNumber.js        |      removeElement.js       |    Pallindrome.html |
 | checkStraigtLine.js     |       intersection.js       |        moveZeros.js |
-| shuffleString.js        |                             |                     |
+| shuffleString.js        |  reverseVowels.js           |                     |
 
 ## Python3
 
